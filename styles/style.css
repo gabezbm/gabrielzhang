@@ -1,91 +1,116 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 
+:root {
+    --transition: 0.2s;
+}
+
+[color-theme="dark"] {
+  --font-family: "Barlow", sans-serif;
+  --background-color: #212529;
+  --text-color: #e9ecef;
+  --highlight-color: #fae7aa;
+  --clickable-color: #adb5bd;
+  --clickable-hover-color: #f8f9fa;
+}
+
+[color-theme="light"] {
+  --font-family: "Barlow", sans-serif;
+  --background-color: #f8f9fa;
+  --text-color: #212529;
+  --highlight-color: #f5cb5c;
+  --clickable-color: #6c757d;
+  --clickable-hover-color: #212529;
+}
+
 * {
-    margin: 0;
-    padding: 0;
-    user-select: none;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  text-decoration: none;
 }
 
 body {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: bottom;
-    background-attachment: fixed;
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  transition: var(--transition);
 }
 
-.body-container {
-    color: white;
-    font-family: "Barlow", sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+#navbar {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  display: flex;
+  gap: 2em;
 }
 
-.body-container .button {
-    font-size: 1.4em;
-    position: absolute;
-    top: 30px;
-    right: 30px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    color: rgba(255, 255, 255, 0.9);
-    background-color: rgba(0, 0, 0, 0.9);
-    transition: 0.2s;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#navbar .nav-link,
+#theme-switcher {
+  text-align: center;
+  font-size: 1.4rem;
+  color: var(--clickable-color);
+  transition: var(--transition);
 }
 
-.body-container .button:hover {
-    color: rgba(0, 0, 0, 0.9);
-    background-color: rgba(255, 255, 255, 0.9);
+#navbar .nav-link:hover,
+#theme-switcher:hover {
+  color: var(--clickable-hover-color);
+  cursor: pointer;
 }
 
-.center-container {
-    width: 50vw;
-    height: 60vh;
-    background-color: rgba(0, 0, 0, 0.75);
-    border-radius: 8px;
-    text-align: center;
+#info-container {
+  width: 50vw;
+  text-align: center;
 }
 
-.avatar img {
-    margin-top: 5%;
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
+#avatar img {
+  margin-top: 2rem;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
 }
 
-.center-content {
-    padding: 4%;
+#main-info {
+  margin: 1rem;
 }
 
-.center-content h1 {
-    color: wheat;
+#main-info h1 {
+  color: var(--highlight-color);
+  transition: var(--transition);
 }
 
-.center-content h2,
+#main-info h2,
 p {
-    font-weight: lighter;
-    letter-spacing: 1px;
-    width: 75%;
-    margin: 2% auto;
+  font-weight: lighter;
+  letter-spacing: 0.04em;
+  width: 75%;
+  margin: 2% auto;
 }
 
-.contact-me {
-    margin-top: 10px;
+#contact-info {
+  margin-bottom: 2rem;
 }
 
-.contact-me i {
-    padding: 0 0.3em;
-    font-size: 30px;
-    color: rgba(255, 255, 255, 0.7);
-    transition: 0.4s;
+#contact-info h3 {
+  font-weight: normal;
 }
 
-.contact-me i:hover {
-    color: rgba(255, 255, 255, 1);
+#contact-links {
+  margin-top: 0.5rem;
+}
+
+#contact-links i {
+  margin: 0 0.2em;
+  font-size: 30px;
+  color: var(--clickable-color);
+  transition: var(--transition);
+}
+
+#contact-links i:hover {
+  color: var(--clickable-hover-color);
 }
