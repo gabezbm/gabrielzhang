@@ -1,7 +1,7 @@
 function setTheme(theme) {
     const html = document.querySelector("html");
-    Cookies.set("color-theme", theme);
     html.setAttribute("color-theme", theme);
+    localStorage.setItem("color-theme", theme)
 }
 
 function themeSwitcher() {
@@ -16,10 +16,5 @@ function themeSwitcher() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    if (Cookies.get("color-theme") == "light") {
-        setTheme("light");
-    } else {
-        setTheme("dark");
-    }
     themeSwitcher();
 });
