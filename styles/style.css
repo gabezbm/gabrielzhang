@@ -1,116 +1,53 @@
-@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
-
-:root {
-    --transition: 0.2s;
-}
-
-[color-theme="dark"] {
-  --font-family: "Barlow", sans-serif;
-  --background-color: #212529;
-  --text-color: #e9ecef;
-  --highlight-color: #fae7aa;
-  --clickable-color: #adb5bd;
-  --clickable-hover-color: #f8f9fa;
-}
-
-[color-theme="light"] {
-  --font-family: "Barlow", sans-serif;
-  --background-color: #f8f9fa;
-  --text-color: #212529;
-  --highlight-color: #f5cb5c;
-  --clickable-color: #6c757d;
-  --clickable-hover-color: #212529;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  user-select: none;
-  text-decoration: none;
-}
-
-body {
-  font-family: var(--font-family);
-  background-color: var(--background-color);
-  color: var(--text-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  transition: var(--transition);
-}
-
-#navbar {
-  position: absolute;
-  top: 2rem;
-  left: 2rem;
-  display: flex;
-  gap: 2em;
-}
-
-#navbar .nav-link,
-#theme-switcher {
-  text-align: center;
-  font-size: 1.4rem;
-  color: var(--clickable-color);
-  transition: var(--transition);
-}
-
-#navbar .nav-link:hover,
-#theme-switcher:hover {
-  color: var(--clickable-hover-color);
-  cursor: pointer;
-}
+@import url("../frameworks/framework.css");
 
 #info-container {
-  width: 50vw;
-  text-align: center;
+    width: 60vw;
+    text-align: center;
 }
 
 #avatar img {
-  margin-top: 2rem;
-  border-radius: 50%;
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
+    margin-top: 2rem;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
 }
 
 #main-info {
-  margin: 1rem;
+    margin: 1rem;
 }
 
 #main-info h1 {
-  color: var(--highlight-color);
-  transition: var(--transition);
+    color: var(--highlight-color);
+    transition: var(--transition);
 }
 
 #main-info h2,
 p {
-  font-weight: lighter;
-  letter-spacing: 0.04em;
-  width: 75%;
-  margin: 2% auto;
+    font-weight: normal;
+    letter-spacing: 0.04em;
+    margin: 1rem auto;
 }
 
 #contact-info {
-  margin-bottom: 2rem;
+    margin-bottom: 2rem;
 }
 
 #contact-info h3 {
-  font-weight: normal;
+    font-weight: 500;
 }
 
 #contact-links {
-  margin-top: 0.5rem;
+    margin-top: 0.5rem;
 }
 
 #contact-links i {
-  margin: 0 0.2em;
-  font-size: 30px;
-  color: var(--clickable-color);
-  transition: var(--transition);
+    margin: 0 0.2em;
+    font-size: 30px;
+    color: var(--clickable-color);
+    transition: var(--transition);
 }
 
 #contact-links i:hover {
-  color: var(--clickable-hover-color);
+    color: var(--clickable-hover-color);
 }

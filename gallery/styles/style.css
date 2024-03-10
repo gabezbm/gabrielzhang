@@ -1,96 +1,54 @@
-@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+@import url("../../frameworks/framework.css");
 
-* {
-    margin: 0;
-    padding: 0;
-    user-select: none;
-    box-sizing: border-box;
-}
-
-body {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: bottom;
-    background-attachment: fixed;
-}
-
-.body-container {
-    color: white;
-    font-family: "Barlow", sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-.body-container .button {
-    font-size: 1.4em;
+#photo-gallery {
     position: absolute;
-    top: 30px;
-    right: 30px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    color: rgba(255, 255, 255, 0.9);
-    background-color: rgba(0, 0, 0, 0.9);
-    transition: 0.2s;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    top: 4rem;
+    padding: 1rem 10%;
 }
 
-.body-container .button:hover {
-    color: rgba(0, 0, 0, 0.9);
-    background-color: rgba(255, 255, 255, 0.9);
+#heading {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: normal;
 }
 
-.center-container {
-    padding: 40px 10vw;
-}
-
-.heading {
-    font-size: 2em;
-    margin-bottom: 1em;
-    font-weight: lighter;
-}
-
-.heading span {
-    color: wheat;
+#heading span {
+    color: var(--highlight-color);
     font-weight: bold;
 }
 
-.photo-gallery {
+#photos {
+    margin-top: 1rem;
     display: flex;
     flex-wrap: wrap;
-    gap: 14px;
+    gap: 0.8rem;
 }
 
-.photo-gallery>.photo {
+#photos>.photo {
     flex: 1 1 auto;
     height: 250px;
     position: relative;
 }
 
-.photo-gallery::after {
+#photos::after {
     content: "";
     flex-grow: 1000;
 }
 
-.photo-gallery .photo img {
+#photos>.photo img {
     object-fit: cover;
     width: 100%;
     height: 100%;
     border-radius: 5px;
 }
 
-.photo-description {
+#photos>.photo>.photo-description {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6);
+    background-color: var(--background-color-transparent);
     border-radius: 5px;
     display: flex;
     align-items: center;
@@ -99,12 +57,12 @@ body {
     transition: 0.2s;
 }
 
-.photo-description p {
-    color: white;
+#photos>.photo>.photo-description>p {
+    color: var(--text-color);
     text-align: center;
     padding: 15%;
 }
 
-.photo-gallery .photo:hover .photo-description {
+#photos>.photo:hover>.photo-description {
     transform: scale(1);
 }
