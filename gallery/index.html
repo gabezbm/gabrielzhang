@@ -9,8 +9,15 @@
     <title>Gallery</title>
     <link rel="stylesheet" href="styles/style.css" />
     <link rel="icon" href="../assets/avatar.jpg" />
+    <script>
+        const html = document.querySelector("html");
+        if (localStorage.getItem("color-theme") == "light") {
+            html.setAttribute("color-theme", "light");
+        } else {
+            html.setAttribute("color-theme", "dark");
+        }
+    </script>
     <script src="https://kit.fontawesome.com/85b23af93d.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
     <script src="../frameworks/framework.js" type="module"></script>
 </head>
 
@@ -21,15 +28,6 @@
         </a>
         <a href="#" class="nav-link">
             <div>Gallery</div>
-        </a>
-        <a href="#" class="nav-link">
-            <div>test</div>
-        </a>
-        <a href="#" class="nav-link">
-            <div>t</div>
-        </a>
-        <a href="#" class="nav-link">
-            <div>testtest</div>
         </a>
         <div id="theme-switcher">
             <i class="fa-solid fa-circle-half-stroke"></i>
