@@ -1,17 +1,11 @@
-function themeSwitcher() {
-    document.getElementById("theme-switcher").addEventListener("click", () => {
-        const html = document.querySelector("html");
-        switch (html.getAttribute("color-theme")) {
-            case "dark":
-                html.setAttribute("color-theme", "light");
-                break;
-            default:
-                html.setAttribute("color-theme", "dark");
-                break;
-        }
-    });
-}
-
 document.addEventListener("DOMContentLoaded", () => {
-    themeSwitcher();
+  fetch(
+    "https://taylor-swift-api.sarbo.workers.dev/lyrics?numberOfParagraphs=1?shouldRandomizeLyrics=true",
+  )
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      document.getElementById("quote").innerText = data.lyrics[0];
+    });
 });

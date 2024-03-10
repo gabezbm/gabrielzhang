@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+:root {
+    --font-family: "Barlow", sans-serif;
+    --transition: 0.2s;
+}
+
+[color-theme="dark"] {
+    --background-color: #212529;
+    --background-color-transparent: #212529bf;
+    --text-color: #e9ecef;
+    --highlight-color: #fae7aa;
+    --clickable-color: #adb5bd;
+    --clickable-hover-color: #f8f9fa;
+}
+
+[color-theme="light"] {
+    --background-color: #f8f9fa;
+    --background-color-transparent: #f8f9fabf;
+    --text-color: #212529;
+    --highlight-color: #eead0f;
+    --clickable-color: #6c757d;
+    --clickable-hover-color: #212529;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    text-decoration: none;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    transition: var(--transition);
+}
+
+#navbar {
+    position: absolute;
+    width: 100%;
+    max-width: 100%;
+    top: 2rem;
+    display: flex;
+    gap: 2em;
+}
+
+#navbar .nav-link,
+#theme-switcher {
+    text-align: center;
+    font-size: 1.4rem;
+    color: var(--clickable-color);
+    transition: var(--transition);
+}
+
+#navbar> :first-child {
+    margin-left: 2rem;
+}
+
+#theme-switcher {
+    margin-left: auto;
+    margin-right: 2rem;
+}
+
+#navbar .nav-link:hover,
+#theme-switcher:hover {
+    color: var(--clickable-hover-color);
+    cursor: pointer;
+}

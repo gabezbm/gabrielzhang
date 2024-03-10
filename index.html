@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" color-theme="dark">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8" />
@@ -10,25 +10,27 @@
     <link rel="stylesheet" href="styles/style.css" />
     <link rel="icon" href="assets/avatar.jpg">
     <script src="https://kit.fontawesome.com/85b23af93d.js" crossorigin="anonymous"></script>
-    <script src="scripts/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+    <script src="frameworks/framework.js" type="module"></script>
+    <script src="scripts/script.js" type="module"></script>
 </head>
 
 <body>
     <div id="navbar">
-        <a href="#">
-            <div class="nav-link">Home</div>
+        <a href="#" class="nav-link">
+            <div>Home</div>
         </a>
-        <a href="gallery/index.html">
-            <div class="nav-link">Gallery</div>
+        <a href="gallery/index.html" class="nav-link">
+            <div>Gallery</div>
         </a>
-        <a href="#">
-            <div class="nav-link">Test</div>
+        <a href="#" class="nav-link">
+            <div>test</div>
         </a>
-        <a href="#">
-            <div class="nav-link">T</div>
+        <a href="#" class="nav-link">
+            <div>t</div>
         </a>
-        <a href="#">
-            <div class="nav-link">TestTestTest</div>
+        <a href="#" class="nav-link">
+            <div>testtest</div>
         </a>
         <div id="theme-switcher">
             <i class="fa-solid fa-circle-half-stroke"></i>
@@ -41,9 +43,7 @@
         <div id="main-info">
             <h1>Gabriel Zhang</h1>
             <h2>CS Junior @ ShanghaiTech</h2>
-            <p>Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.
-                Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.
-            </p>
+            <p id="quote"></p>
         </div>
         <div id="contact-info">
             <h3>Contact Me</h3>
