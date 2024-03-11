@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" color-theme="<%= colorTheme %>">
 
 <head>
     <meta charset="UTF-8" />
@@ -9,15 +9,8 @@
     <title>Gabriel Zhang</title>
     <link rel="stylesheet" href="styles/style.css" />
     <link rel="icon" href="assets/avatar.jpg">
-    <script>
-        const html = document.querySelector("html");
-        if (localStorage.getItem("color-theme") == "light") {
-            html.setAttribute("color-theme", "light");
-        } else {
-            html.setAttribute("color-theme", "dark");
-        }
-    </script>
     <script src="https://kit.fontawesome.com/85b23af93d.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
     <script src="frameworks/framework.js"></script>
     <script src="scripts/script.js"></script>
 </head>
