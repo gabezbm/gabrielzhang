@@ -1,1 +1,0 @@
-scp -r ./* "gabe:/var/www/html/"
