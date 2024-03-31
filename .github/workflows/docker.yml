@@ -1,0 +1,40 @@
+name: gabrielzhang.vip CI
+
+env:
+  DOCKERHUB_USERNAME: gabezbm
+  IMAGE_NAME: gabezbm/gabrielzhang:latest
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: docker build
+        run: |
+          docker build . --file Dockerfile --tag ${{ env.IMAGE_NAME }}
+      - name: docker login
+        run: |
+          echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login --username ${{ DOCKERHUB_USERNAME }} --password-stdin
+      - name: docker push
+        run: |
+          docker push ${{ env.IMAGE_NAME }}
+
+  deploy:
+    needs: publish
+    runs-on: ubuntu-latest
+    steps:
+      - name: install ssh keys
+        run: |
+          install -m 600 -D /dev/null ~/.ssh/id_rsa
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          ssh-keyscan -H ${{ secrets.SSH_HOST }} > ~/.ssh/known_hosts
+      - name: connect to server
+        run: |
+          ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd ~/app && sudo docker compose up -d && exit"
+      - name: cleanup
+        run: |
+          rm -rf ~/.ssh
