@@ -1,0 +1,31 @@
+#navbar {
+    position: absolute;
+    width: 100%;
+    max-width: 100%;
+    top: 2rem;
+    display: flex;
+    gap: 2em;
+}
+
+#navbar .nav-link,
+#theme-switcher {
+    text-align: center;
+    font-size: 1.4rem;
+    color: var(--clickable-color);
+    transition: var(--transition);
+}
+
+#navbar> :first-child {
+    margin-left: 2rem;
+}
+
+#theme-switcher {
+    margin-left: auto;
+    margin-right: 2rem;
+}
+
+#navbar .nav-link:hover,
+#theme-switcher:hover {
+    color: var(--clickable-hover-color);
+    cursor: pointer;
+}
