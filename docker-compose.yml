@@ -1,0 +1,6 @@
+services:
+    frontend:
+        container_name: gabrielzhang
+        image: gabezbm/gabrielzhang:latest
+        ports:
+            - 80:80
